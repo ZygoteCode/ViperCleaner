@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{69332DE5-05D8-4268-9635-D137EE07C315}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ViperCleaner</RootNamespace>
+    <AssemblyName>ViperCleaner</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <ErrorReport>none</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Ncrow-Mega-Pack-1-CCleaner.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Guna.UI">
+      <HintPath>..\..\..\LIBRERIE GRAFICHE .NET\Guna.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroSuite 2.0">
+      <HintPath>..\..\..\LIBRERIE GRAFICHE .NET\MetroSuite 2.0.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ELZLOADER\zzz\bin\Release\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Siticone.UI">
+      <HintPath>..\..\..\LIBRERIE GRAFICHE .NET\Siticone.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="websocket-sharp">
+      <HintPath>..\ELZLOADER\zzz\bin\Release\websocket-sharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\Cleaner\Cleaner.cs" />
+    <Compile Include="Core\Cleaner\CleanerManager.cs" />
+    <Compile Include="Core\Cleaner\Cleaners\CleanerAntiVirusTemp.cs" />
+    <Compile Include="Core\Cleaner\Cleaners\CleanerApplicationsTemp.cs" />
+    <Compile Include="Core\Cleaner\Cleaners\CleanerArchiveTemp.cs" />
+    <Compile Include="Core\Cleaner\Cleaners\CleanerBITS.cs" />
+    <Compile Include="Core\Cleaner\Cleaners\CleanerChkdskFileFragments.cs" />
+    <Compile Include="Core\Cleaner\Cleaners\CleanerCLR.cs" />
+    <Compile Include="Core\Cleaner\Cleaners\CleanerCrashDumps.cs" />
+    <Compile Include="Core\Cleaner\Cleaners\CleanerDesktopShortcuts.cs" />
+    <Compile Include="Core\Cleaner\Cleaners\CleanerDirectXShaderCache.cs" />
+    <Compile Include="Core\Cleaner\Cleaners\CleanerDNSCache.cs" />
+    <Compile Include="Core\Cleaner\Cleaners\CleanerDownloadFolder.cs" />
+    <Compile Include="Core\Cleaner\Cleaners\CleanerDriverPackages.cs" />
+    <Compile Include="Core\Cleaner\Cleaners\CleanerExplorerCache.cs" />
+    <Compile Include="Core\Cleaner\Cleaners\CleanerFirefoxCache.cs" />
+    <Compile Include="Core\Cleaner\Cleaners\CleanerFirewall.cs" />
+    <Compile Include="Core\Cleaner\Cleaners\CleanerFontCache.cs" />
+    <Compile Include="Core\Cleaner\Cleaners\CleanerGamesLogs.cs" />
+    <Compile Include="Core\Cleaner\Cleaners\CleanerGoogleChromeCache.cs" />
+    <Compile Include="Core\Cleaner\Cleaners\CleanerHostsFile.cs" />
+    <Compile Include="Core\Cleaner\Cleaners\CleanerIISLogs.cs" />
+    <Compile Include="Core\Cleaner\Cleaners\CleanerINetCache.cs" />
+    <Compile Include="Core\Cleaner\Cleaners\CleanerInstallCache.cs" />
+    <Compile Include="Core\Cleaner\Cleaners\CleanerInternetExplorerCache.cs" />
+    <Compile Include="Core\Cleaner\Cleaners\CleanerKernelReports.cs" />
+    <Compile Include="Core\Cleaner\Cleaners\CleanerLocalLow.cs" />
+    <Compile Include="Core\Cleaner\Cleaners\CleanerMediaTemp.cs" />
+    <Compile Include="Core\Cleaner\Cleaners\CleanerMemoryDumps.cs" />
+    <Compile Include="Core\Cleaner\Cleaners\CleanerMicrosoftEdgeCache.cs" />
+    <Compile Include="Core\Cleaner\Cleaners\CleanerMinecraftLogs.cs" />
+    <Compile Include="Core\Cleaner\Cleaners\CleanerOperaCache.cs" />
+    <Compile Include="Core\Cleaner\Cleaners\CleanerOptimizationLogs.cs" />
+    <Compile Include="Core\Cleaner\Cleaners\CleanerPackageCache.cs" />
+    <Compile Include="Core\Cleaner\Cleaners\CleanerPrefetch.cs" />
+    <Compile Include="Core\Cleaner\Cleaners\CleanerPrinterQueue.cs" />
+    <Compile Include="Core\Cleaner\Cleaners\CleanerReportArchive.cs" />
+    <Compile Include="Core\Cleaner\Cleaners\CleanerSafariCache.cs" />
+    <Compile Include="Core\Cleaner\Cleaners\CleanerSoftwareDistribution.cs" />
+    <Compile Include="Core\Cleaner\Cleaners\CleanerStartMenuShortcuts.cs" />
+    <Compile Include="Core\Cleaner\Cleaners\CleanerSteamLogs.cs" />
+    <Compile Include="Core\Cleaner\Cleaners\CleanerSystemTempFiles.cs" />
+    <Compile Include="Core\Cleaner\Cleaners\CleanerTCPIP.cs" />
+    <Compile Include="Core\Cleaner\Cleaners\CleanerTemp.cs" />
+    <Compile Include="Core\Cleaner\Cleaners\CleanerThumbnailCache.cs" />
+    <Compile Include="Core\Cleaner\Cleaners\CleanerUserAssistHistory.cs" />
+    <Compile Include="Core\Cleaner\Cleaners\CleanerWindowsEventLogs.cs" />
+    <Compile Include="Core\Cleaner\Cleaners\CleanerWindowsLogs.cs" />
+    <Compile Include="Core\Cleaner\Cleaners\CleanerWinSock.cs" />
+    <Compile Include="Core\Optimizer\Optimizer.cs" />
+    <Compile Include="Core\Optimizer\OptimizerManager.cs" />
+    <Compile Include="Core\Optimizer\Optimizers\OptimizerTCPOptimizations.cs" />
+    <Compile Include="Core\Spoofer\Spoofer.cs" />
+    <Compile Include="Core\Spoofer\SpooferManager.cs" />
+    <Compile Include="Core\Spoofer\Spoofers\SpooferMACAddress.cs" />
+    <Compile Include="File Unlocking\ListViewLocker.cs" />
+    <Compile Include="File Unlocking\NativeMethods.cs" />
+    <Compile Include="File Unlocking\ProcessLocker.cs" />
+    <Compile Include="Main\FirefoxTheme.cs" />
+    <Compile Include="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Program.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\Paths.cs" />
+    <Compile Include="Utils\Utils.cs" />
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Ncrow-Mega-Pack-1-CCleaner.ico" />
+    <None Include="Resources\2.png" />
+    <None Include="Resources\1.png" />
+    <None Include="Resources\7.png" />
+    <None Include="Resources\6.png" />
+    <None Include="Resources\5.png" />
+    <None Include="Resources\4.png" />
+    <None Include="Resources\3.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
